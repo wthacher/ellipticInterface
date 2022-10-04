@@ -1,0 +1,30 @@
+##test parameters
+test.nCells = 64
+test.convergence = false
+test.prefix = output
+test.nCellsFine = 128
+test.bc = 0 ##0 is periodic, 1 is calving front everywhere, 2 is periodic in y and calving in x
+
+##reconstruction parameters
+rec.order = 2 ##polynomial order
+rec.recOrder = 2 ## order of reconstruction
+rec.weight = 3 ##weighting scheme for local WLS - (1/distance^weight). we do 1 more than the order usually
+rec.useGradJump = true
+rec.factorMu = true ##whether to factor mu in LS systems.
+rec.HOCut = false #use one higher order in cut cells - doesnt seem to do nothing
+rec.conserve = true ##conservative scheme
+rec.useL = false
+rec.noEB  = false
+
+
+##physical params
+phys.beta = 35000
+phys.betaFloat = 0
+phys.muInit = 1e6
+phys.muInitFloat = 1e6
+phys.constFriction = false
+
+##solver params
+solver.hang = 0
+solver.maxOuterIt = 40
+solver.picardTol = 1e-6 ##reduce residual by this many OM

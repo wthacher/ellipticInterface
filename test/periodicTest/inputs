@@ -1,0 +1,41 @@
+##test parameters
+test.nCells = 256 ##domain is [-1 : 1]^2
+test.convergence = false
+test.noSolve = false ##if we do no solve it will just output exact solution, which is useful for convergnce tests
+test.prefix = output
+test.nCellsFine = 1024
+
+##0 is ellipse, 1 is annulus, 2 is rhodonea, else no geometry at all - all positive phase
+test.geom = 0
+
+##1 is fourier basis, 0 is polynomial basis
+##N is the number of either fourier or polynomial terms - should be an odd square (1,9,25 etc)
+test.solN = 9
+test.solFuncInType = 0
+test.solFuncOutType = 1
+test.betaFuncInType = 1
+test.betaFuncOutType = 0
+test.etaFuncInType = 1
+test.etaFuncOutType = 1
+
+##either fourier or polynomial coefficients
+##order
+test.solCoefIn = -0.3551   -0.2330    0.1451    0.0820   -0.0731    0.4843    0.4692   -0.4059   -0.2909
+test.solCoefOut = -0.3752    0.2711    0.2479   -0.1344   -0.1110   -0.0608    0.1430    0.2657    0.4931
+test.betaCoefIn = 0.1490    0.4172    0.1932   -0.2646    0.4898   -0.1040    0.0779   -0.4122   -0.0401
+test.betaCoefOut = 1 0 0 0 0 0 0 0 0
+test.etaCoefIn = -0.4568   -0.0132    0.2413    0.2006    0.1543   -0.3229    0.2326   -0.2321    0.0841
+test.etaCoefOut = 1 0 0 0 0 0 0 0 0
+
+
+##reconstruction parameters
+rec.order = 2 ##polynomial order for discretization
+rec.recOrder = 2 ## order of reconstruction
+rec.weight = 3 ##weighting scheme for local WLS - (1/distance^weight).
+rec.factorEta = false ##whether to factor mu in LS systems.
+
+##for debeugging - dont change these
+rec.HOCut = false #use one higher order in cut cells - doesnt seem to do nothing
+rec.conserve = true ##conservative scheme
+rec.noEB  = false ##turn off cut cell scheme 
+
