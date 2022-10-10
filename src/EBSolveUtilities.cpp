@@ -40,7 +40,7 @@ void makeRegularCellStencil(LAPACKMatrix& SBeta,
     //can skip cells that are further than L1 distance of r-1 away
 
     Real dist, weight,w;
-    w = Q + 1;
+    w = max(Q + 1,5);
 
     LAPACKMatrix W, MvU2, MvV2;
 

@@ -67,7 +67,7 @@ public:
 
         dx = xn1 - xn;
         dy = yn1 - yn;
-        err = err = sqrt( dx*dx + dy*dy  );
+        err = sqrt( dx*dx + dy*dy  );
 
         while(err > tol && iter < maxIter)
         {
@@ -85,7 +85,7 @@ public:
             dx = xn1 - xn;
             dy = yn1 - yn;
 
-            err = sqrt( dx*dx + dy*dy  );
+            err = sqrt( dx*dx + dy*dy  ) ;
 
             iter = iter+1;
         }

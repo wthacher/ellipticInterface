@@ -481,6 +481,7 @@ EBDriver::assembleSystem(const LevelData<FArrayBox>& a_phi,
         IntVect up(0,1); IntVect right(1,0); IntVect iv, sIv;
 
         Vector<Real> kappa(2,0);
+        //Vector<Real> kappaScale(2,1);
 
         PetscScalar rJump [1];
 

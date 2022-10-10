@@ -569,7 +569,7 @@ public:
     {
         Real z=0;
         
-        z -= betaFunc->val(x,y);
+        z -= (betaFunc->val(x,y)) * ( uFunc->val(x,y) );
         z += (etaFunc->derivVal(x,y,1,0) ) * ( uFunc->derivVal(x,y,1,0) );
         z += (etaFunc->val(x,y) ) * ( uFunc->derivVal(x,y,2,0) );
 
@@ -640,8 +640,8 @@ public:
                 else if(dx == 1){c1 = w*nx*-1*sin(w*nx*x);  s1 = w*nx*cos(w*nx*x);}
                 else{c1 = w*w*nx*nx*-1*cos(w*nx*x); s1 = w*w*nx*nx*-1*sin(w*nx*x); }
 
-                if(dx == 0){c2 = cos(w*ny*y); s2 = sin(w*ny*y);}
-                else if(dx == 1){c2 = w*nx*-1*sin(w*ny*y);  s2 = w*nx*cos(w*ny*y);}
+                if(dy == 0){c2 = cos(w*ny*y); s2 = sin(w*ny*y);}
+                else if(dy == 1){c2 = w*ny*-1*sin(w*ny*y);  s2 = w*ny*cos(w*ny*y);}
                 else{c2 = w*w*ny*ny*-1*cos(w*ny*y); s2 = w*w*ny*ny*-1*sin(w*ny*y); }
 
                 z+= coef[c]*( c1*c2 - s1*s2 );

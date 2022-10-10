@@ -170,7 +170,7 @@ EBEllipticSetUp::getOperator(const LevelData<FArrayBox>& cellBeta, const LevelDa
         {
             iv = ivIt();
 
-            // if(iv[0]==26 && iv[1]==14)
+            // if(iv[0]==13 && iv[1]==40)
             // {
             //     printf("Asdfasdf \n");
             // }

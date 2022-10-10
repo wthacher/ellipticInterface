@@ -14,7 +14,6 @@
 
 #include "EBSolveUtilities.H"
 #include "EBReconstruction.H"
-#include "BCSetUp.H"
 #include "EBEllipticSetUp.H"
 #ifdef CH_USE_PETSC
 #include "petsc.h"
@@ -49,12 +48,6 @@ public:
     RefCountedPtr<EBEllipticSetUp> m_EBEllipticSU;
     RefCountedPtr< LevelData<FluxBox> > m_faceIntVals;
     RefCountedPtr<BoxLayoutData<IVSFAB<EBStencil> > > EBOpStencilCut;
-
-    //BC stuff
-    RefCountedPtr<BCSetUp> m_BCSetUp;
-    RefCountedPtr< LevelData<IVSFAB<Real> > > m_BCData;
-    RefCountedPtr< LevelData<IVSFAB<Real> > > m_BCMoments;
-    RefCountedPtr<LevelData<NodeFArrayBox> > m_BCNodes; //tells you if cell is in or out, or which part is in
 
 
     LevelData<FArrayBox> cellIDs;
@@ -99,9 +92,6 @@ public:
 
         betaStencil = SBeta;
         etaStencil = SEta;
-
-        RefCountedPtr<BCSetUp> m_BCSetUpPtr(new BCSetUp) ;
-        m_BCSetUp = m_BCSetUpPtr;
 
 
     }

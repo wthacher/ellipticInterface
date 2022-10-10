@@ -77,7 +77,7 @@ public:
     };
 
     Real
-    integrateArea(moment a_func, int p, int q, int dir, Real a_tol = 1e-12, int a_max_iter = 5)
+    integrateArea(moment a_func, int p, int q, int dir, Real a_tol = 1e-15, int a_max_iter = 12)
     {
         CH_TIME("romberg::integrateArea");
         Real err = 2*a_tol;

@@ -90,7 +90,7 @@ public:
         m_dx = a_dx;
         m_weight = a_weight;
         //r = (*m_psiNodes).ghostVect()[0]; 
-        r = m_Q-1;
+        r = m_Q;
         nStenCells = (2*r+1)*(2*r+1);
 
         //set up LevelDatas

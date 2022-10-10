@@ -90,7 +90,7 @@ int main(int argc, char* argv[])
     char* in_file = argv[1];
     ParmParse  pp(argc-2,argv+2,NULL,in_file);
     bool convergence, conserve,  factorEta, HOCut, noEB, noSolve;
-    Real weight;
+    Real weight, betaInScale, betaOutScale, etaInScale, etaOutScale;
     int maxIter, recOrder, order, nCells, nCellsFine, geom;
     int solFuncInType, solFuncOutType;
     int betaFuncInType, betaFuncOutType, etaFuncInType, etaFuncOutType;
@@ -132,8 +132,18 @@ int main(int argc, char* argv[])
 
     ppTest.getarr("etaCoefIn", etaCoefIn, 0, solN);
     ppTest.getarr("etaCoefOut", etaCoefOut, 0, solN);
-    
 
+    ppTest.get("betaInScale", betaInScale);
+    ppTest.get("betaOutScale", betaOutScale);
+
+    ppTest.get("etaInScale", etaInScale);
+    ppTest.get("etaOutScale", etaOutScale);
+
+    for(int i=0;i<solN;i++)
+    {
+        betaCoefIn[i]*=betaInScale; betaCoefOut[i]*=betaOutScale;
+        etaCoefIn[i]*=etaInScale; etaCoefOut[i]*=etaOutScale;
+    }
     ParmParse ppRec("rec"); 
     ppRec.get("order", order);
     ppRec.get("weight", weight);
@@ -392,8 +402,8 @@ int main(int argc, char* argv[])
                 }
                 else
                 {
-                    // if(psiNodesFab(iv,0) > 0){c=0;}
-                    // else{c=1;}
+                    if(psiNodesFab(iv,0) > 0){c=0;}
+                    else{c=1;}
                     for(c=0;c<2;c++)
                     {
                         outputFab(iv,c) = uFab(iv,0);
@@ -401,6 +411,16 @@ int main(int argc, char* argv[])
                         outputFab(iv,4+c) = betaFab(iv,c);
                         outputFab(iv,6+c) = etaFab(iv,c);
                         outputFab(iv,8) = psiNodesFab(iv);
+                    }
+                    if(psiNodesFab(iv,0) > 0)
+                    {
+                        outputFab(iv,4) = betaFab(iv,0);
+                        outputFab(iv,6) = etaFab(iv,0);
+                    }
+                    else
+                    {
+                        outputFab(iv,4) = betaFab(iv,1);
+                        outputFab(iv,6) = etaFab(iv,1);
                     }
                     
 

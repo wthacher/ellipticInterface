@@ -95,9 +95,9 @@ int main(int argc, char* argv[])
     Real radx = M_PI / 10.0;
     Real rady = M_PI / 20.0;
 
-    //EllipsoidIF psi( 1.0/(radx*radx), 1.0/(rady*rady), .5, .5);
+    EllipsoidIF psi( 1.0/(radx*radx), 1.0/(rady*rady), .5, .5);
 
-    annulusIF psi;
+    //annulusIF psi;
 
     //rhodoneaIF psi;
 

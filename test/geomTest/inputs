@@ -1,8 +1,8 @@
 ##test parameters
-test.nCells = 64
+test.nCells = 256
 test.convergence = false
 test.prefix = output
-test.nCellsFine = 128
+test.nCellsFine = 512
 test.bc = 0 ##0 is periodic, 1 is calving front everywhere, 2 is periodic in y and calving in x
 
 ##reconstruction parameters
