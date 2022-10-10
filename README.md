@@ -15,4 +15,4 @@ The [Chombo Design Document](https://commons.lbl.gov/display/chombo/Chombo+-+Sof
 
 Once you have built the Chombo library, you are most of the way there. In one of the directories in the 'test' folder, edit the makefile to relfect your own directory layout; the PETSC_DIR and CHOMBO_HOME variables need to point to those respective libraries. Type 'make all' - if all goes well, this should produce an executable. The inputs file allows to you control options for each example. 
 
-To see some images of discontinuos solutions and coefficients as well as generated geometries, see the gallery directory.
+To see some images of discontinuous solutions and coefficients as well as generated geometries, see the gallery directory.
