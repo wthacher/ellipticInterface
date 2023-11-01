@@ -2,6 +2,8 @@
 
 This code solves, in two dimensions, the elliptic equation -\beta u + div (eta F(u)) = f, where eta, beta, and f may be disconintinuous across some internal interface. We employ a conservative cut cell, finite volume scheme which uses least-squares interpolation to acheive high-order accuracy.
 
+[Full Paper](https://www.sciencedirect.com/science/article/pii/S0021999123004461)
+
 <img src="./gallery/betaCoef.png" height="400px" width="500px" > <img src="./gallery/uSol2.png" height="400px" width="500px" >
 
 Left: Discontinuous beta coefficient with "rhodonea" geometry. Right: Discontinuous solution with "annulus" geometry.
